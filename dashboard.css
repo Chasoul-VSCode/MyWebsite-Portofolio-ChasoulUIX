@@ -643,6 +643,7 @@ body:not(.user-is-tabbing) a:focus {
   .about__photo {
     max-width: 250px;
     height: auto;
+    border-radius: 50%;
   }
   
 
