@@ -647,7 +647,7 @@ body:not(.user-is-tabbing) a:focus {
   }
   
 
-  /* stat skill */
+  /* stat skill */  
 
    
   .skills {
@@ -658,7 +658,7 @@ body:not(.user-is-tabbing) a:focus {
 .skills h2 {
     margin-bottom: 20px;
     font-size: 2rem;
-    color: #333;
+    color: #bdbdbd;
 }
 
 .skills__grid {
@@ -851,10 +851,28 @@ body:not(.user-is-tabbing) a:focus {
   }
 
   /* Animasi Zoom In */
+
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
 .zoom-in {
   opacity: 0;
-  transform: scale(0.8);
-  transition: all 0.5s ease-out;
+  transform: scale(0.9);
+  transition: all 0.5s ease;
+}
+
+.scroll-active {
+  opacity: 1;
+  transform: scale(1);
+  animation: zoomIn 0.6s ease forwards;
 }
 
 .zoom-in.scroll-active {
@@ -870,4 +888,39 @@ body:not(.user-is-tabbing) a:focus {
   transition-delay: 0.3s;
 }
 
+.skills__grid .skill__card img {
+  opacity: 0; /* Awalnya tidak terlihat */
+  transform: scale(0.9); /* Awalnya lebih kecil */
+  animation: zoomIn 0.6s ease forwards; /* Animasi zoom in */
+  /* Efek animasi hanya terjadi sekali dan tetap terlihat setelah animasi */
+  animation-fill-mode: forwards;
+}
 
+/* Menambahkan delay yang berbeda pada setiap skill card */
+.skill__card:nth-child(1) img {
+  animation-delay: 0s;
+}
+
+.skill__card:nth-child(2) img {
+  animation-delay: 0.2s;
+}
+
+.skill__card:nth-child(3) img {
+  animation-delay: 0.4s;
+}
+
+.skill__card:nth-child(4) img {
+  animation-delay: 0.6s;
+}
+
+.skill__card:nth-child(5) img {
+  animation-delay: 0.8s;
+}
+
+.skill__card:nth-child(6) img {
+  animation-delay: 1s;
+}
+
+.skill__card:nth-child(7) img {
+  animation-delay: 1.2s;
+}

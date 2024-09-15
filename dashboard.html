@@ -245,7 +245,7 @@
           </section>
 
           <script>
-          // Fungsi untuk mendeteksi apakah elemen dalam viewport
+         // Fungsi untuk mendeteksi apakah elemen dalam viewport
 function isElementInViewport(el) {
   const rect = el.getBoundingClientRect();
   return (
@@ -256,15 +256,13 @@ function isElementInViewport(el) {
   );
 }
 
-// Fungsi untuk menambahkan kelas 'scroll-active'
+// Fungsi untuk menambahkan atau menghapus kelas 'scroll-active'
 function animateOnScroll() {
   const zoomElements = document.querySelectorAll('.zoom-in');
+  
   zoomElements.forEach(function(el) {
     if (isElementInViewport(el)) {
       el.classList.add('scroll-active');
-      console.log('Element visible, adding class scroll-active');
-    } else {
-      console.log('Element not visible');
     }
   });
 }
